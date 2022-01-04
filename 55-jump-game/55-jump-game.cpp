@@ -12,7 +12,6 @@ public:
                 answer = true;
                 target = i-1;
             }
-            
         }
         return answer;
     }
