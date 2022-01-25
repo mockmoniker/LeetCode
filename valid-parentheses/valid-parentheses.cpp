@@ -8,6 +8,7 @@ public:
         stack.push(type);
     }
     
+    // checks if invalid case occurs
     bool decrementAndPop(int type){
         if(stack.empty() or type != stack.top() or type_counts[type] == 0){
             return false;
@@ -18,7 +19,6 @@ public:
     }
     
     bool isValid(string s) {
-        
         // parse through string
         for(int i = 0; i < s.length(); ++i){
             switch(s[i]){
@@ -48,6 +48,8 @@ public:
                     break;
             }
         }
+        
+        // check if any remaining open parantheses exist
         if(type_counts[0] + type_counts[1] + type_counts[2] == 0){
             return true;
         }
